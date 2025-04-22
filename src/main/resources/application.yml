@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/movieticketapp
+    username: root
+    password: spiderman
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  secret: ejrwQeirqwKhtuwq234k4923257344@%
+  expiration: 36000000
+admin:
+  secret-key: spiderman
