@@ -75,7 +75,7 @@ public class MovieServiceIMPL implements MovieService {
 
     @Override
     public List<Movie> getMoviesByLanguage(String language) {
-        Optional<List<Movie>> listOfMoviesByLanguage =  movieRepository.findByGenre(language) ;
+        Optional<List<Movie>> listOfMoviesByLanguage =  movieRepository.findByLanguage(language) ;
         if(listOfMoviesByLanguage.isPresent()){
             return listOfMoviesByLanguage.get();
         }else throw new RuntimeException("No movie found with this language" + language);

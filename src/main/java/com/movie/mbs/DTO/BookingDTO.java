@@ -15,5 +15,4 @@ public class BookingDTO {
     private Long userId;
     private Long showId;
     private List<String> seatNumbers;
-
 }

@@ -102,7 +102,7 @@ public class ShowServiceIMPL implements ShowService {
         }
         List<Booking> bookings = showRepository.findById(id).get().getBookings();
         if(!bookings.isEmpty()){
-            throw new RuntimeException("now show available with this id");
+            throw new RuntimeException("no show available with this id");
         }
         showRepository.deleteById(id);
         return " show has been deleted successfully with id " + " id";

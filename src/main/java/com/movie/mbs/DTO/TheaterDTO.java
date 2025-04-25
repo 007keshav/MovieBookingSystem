@@ -11,14 +11,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class TheaterDTO {
+
     private String theaterName;
 
     private String location;
 
     private Integer theaterCapacity;
 
-
     private String theaterScreenType;
-
 
 }
