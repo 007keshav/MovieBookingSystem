@@ -36,10 +36,14 @@ public class ShowServiceIMPL implements ShowService {
     public Shows createShow(ShowDTO showDTO) {
 
         Movie movie = movieRepository.findById(showDTO.getMovieId())
-                .orElseThrow(()-> new RuntimeException("No Movie Found"));
+                .orElseThrow(
+                        ()-> new RuntimeException("No Movie Found")
+                );
 
         Theater theater = theaterRepository.findById(showDTO.getTheaterId())
-                .orElseThrow(()-> new RuntimeException("No theater found for id "+showDTO.getTheaterId()));
+                .orElseThrow(
+                        ()-> new RuntimeException("No theater found for id "+showDTO.getTheaterId())
+                );
 
         Shows show = new Shows();
         show.setShowTime(showDTO.getShowTime());
@@ -90,7 +94,9 @@ public class ShowServiceIMPL implements ShowService {
                 );
 
         Theater theater = theaterRepository.findById(showDTO.getTheaterId())
-                .orElseThrow(()-> new RuntimeException("No theater found for id "+showDTO.getTheaterId()));
+                .orElseThrow(
+                        ()-> new RuntimeException("No theater found for id "+showDTO.getTheaterId())
+                );
 
         show.setShowTime(showDTO.getShowTime());
         show.setPrice(showDTO.getPrice());

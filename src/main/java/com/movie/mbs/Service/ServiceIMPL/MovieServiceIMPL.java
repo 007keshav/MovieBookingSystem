@@ -54,7 +54,11 @@ public class MovieServiceIMPL implements MovieService {
 
     @Override
     public Movie updateMovie(Long id, MovieDTO movieDTO) {
-        Movie movie = movieRepository.findById(id).orElseThrow(() -> new RuntimeException( "no movie found for the id "+ id));
+
+        Movie movie = movieRepository.findById(id).orElseThrow(
+                () -> new RuntimeException( "no movie found for the id "+ id)
+        );
+
         movie.setDescription(movieDTO.getDescription());
         movie.setDuration(movieDTO.getDuration());
         movie.setGenre(movieDTO.getGenre());

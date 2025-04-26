@@ -53,6 +53,6 @@ public class TheaterServiceIMPL implements TheaterService {
     @Override
     public String deleteTheater(Long id) {
         theaterRepository.deleteById(id);
-        return "theater has been  deleted by id "+id ;
+        return "Theater with " +id+" has been  deleted" ;
     }
 }
