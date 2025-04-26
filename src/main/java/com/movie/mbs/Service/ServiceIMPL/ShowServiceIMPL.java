@@ -85,7 +85,9 @@ public class ShowServiceIMPL implements ShowService {
                  );
 
         Movie movie = movieRepository.findById(showDTO.getMovieId())
-                .orElseThrow(()-> new RuntimeException("No Movie Found"));
+                .orElseThrow(
+                        ()-> new RuntimeException("No Movie Found")
+                );
 
         Theater theater = theaterRepository.findById(showDTO.getTheaterId())
                 .orElseThrow(()-> new RuntimeException("No theater found for id "+showDTO.getTheaterId()));
