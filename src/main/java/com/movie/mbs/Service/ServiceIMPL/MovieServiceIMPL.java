@@ -17,8 +17,6 @@ public class MovieServiceIMPL implements MovieService {
     private MovieRepository movieRepository;
 
 
-
-
     @Override
     public Movie addMovie(MovieDTO movieDTO) {
         Movie movie = new Movie();
