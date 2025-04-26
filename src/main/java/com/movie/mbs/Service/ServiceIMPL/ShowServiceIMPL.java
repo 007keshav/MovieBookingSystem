@@ -78,7 +78,11 @@ public class ShowServiceIMPL implements ShowService {
 
     @Override
     public Shows updateShow(Long id, ShowDTO showDTO) {
-         Shows show = showRepository.findById(id).orElseThrow(()-> new RuntimeException("now show found with this id " + id));
+
+         Shows show = showRepository.findById(id)
+                 .orElseThrow(
+                    ()-> new RuntimeException("now show found with this id " + id)
+                 );
 
         Movie movie = movieRepository.findById(showDTO.getMovieId())
                 .orElseThrow(()-> new RuntimeException("No Movie Found"));
