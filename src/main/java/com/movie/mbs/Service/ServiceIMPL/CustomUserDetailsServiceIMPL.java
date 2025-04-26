@@ -27,7 +27,9 @@ public class CustomUserDetailsServiceIMPL implements UserDetailsService {
 //        return userRepository.findByUsername(username)
 //                .orElseThrow(()-> new RuntimeException("User not found with this username"));
         User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + username));
+                .orElseThrow(
+                        () -> new UsernameNotFoundException("User not found with username: " + username)
+                );
 
         return new org.springframework.security.core.userdetails.User(
                 user.getUsername(),
